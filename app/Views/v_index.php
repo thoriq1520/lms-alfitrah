@@ -83,6 +83,10 @@
     <!-- Service Start -->
     <div class="container-xxl py-5">
         <div class="container">
+        <div class="text-center wow fadeInUp" data-wow-delay="0.4s">
+                <h6 class="section-title bg-white text-center text-primary px-3">Kelas</h6>
+                <h1 class="mb-5">Courses Categories</h1>
+            </div>
             <div class="row g-4  justify-content-center">
                 <div class="col-lg-3 col-sm-6 wow fadeInUp" data-wow-delay="0.1s">
                     <div class="service-item text-center pt-3">
