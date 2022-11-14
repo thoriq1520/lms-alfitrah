@@ -77,7 +77,13 @@
 
 
 /*** Navbar ***/
+/* .displayGambar{
+    display: block;
+    justify-content: space-between;
+} */
+
 .navbar .dropdown-toggle::after {
+    
     border: none;
     content: "\f107";
     font-family: "Font Awesome 5 Free";
