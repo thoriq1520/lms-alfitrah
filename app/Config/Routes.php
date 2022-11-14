@@ -37,6 +37,7 @@ $routes->set404Override();
 // route since we don't have to scan directories.
 $routes->get('/login', 'c_main::login');
 $routes->get('/', 'c_main::display');
+$routes->get('kelas', 'c_main::kelas');
 
 /*
  * --------------------------------------------------------------------
