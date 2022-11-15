@@ -11,7 +11,7 @@ class c_materi extends BaseController
         $this->materiModel = new m_materi();
     }
 
-    public function input_mahasiswa()
+    public function post_materi()
     {
         if (!session()->get('login')) {
             return redirect()->route('');
@@ -28,7 +28,7 @@ class c_materi extends BaseController
 
         if ($result) {
             session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
-            return redirect()->route('mahasiswa');
+            return redirect()->route('mapel');
         }
     }
 }

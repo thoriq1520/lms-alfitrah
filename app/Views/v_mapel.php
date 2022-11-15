@@ -50,29 +50,29 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form enctype="multipart/form-data">
-                    <fieldset disabled>
+                <form method="post" action="post_materi" enctype="multipart/form-data">
+                    <fieldset>
                         <div class="row mb-3">
                             <label for="disabledTextInput" class="col-sm-2 col-form-label col-form-label-sm">Mapel</label>
                             <div class="col-sm-10">
-                                <input type="text" id="disabledTextInput" class="form-control form-control-sm">
+                                <input type="text" name="nama_mapel" value="" id="disabledTextInput" class="form-control form-control-sm">
                             </div>
                         </div>
                     </fieldset>
                     <div class="row mb-3">
                         <label for="materi" class="col-sm-2 col-form-label col-form-label-sm">Materi</label>
                         <div class="col-sm-10">
-                            <input type="text" id="materi" class="form-control form-control-sm" placeholder="Judul Materi">
+                            <input type="text" id="materi" name="judul_materi" value="" class="form-control form-control-sm" placeholder="Judul Materi">
                         </div>
                     </div>
                     <div class="row mb-3">
                         <label for="colFormLabelSm" class="col-sm-2 col-form-label col-form-label-sm">Kelas</label>
                         <div class="col-sm-10">
-                            <select class="form-select form-select-sm" aria-label=".form-select-sm example">
+                            <select name="kelas" class="form-select form-select-sm" aria-label=".form-select-sm example">
                                 <option selected>Pilih Kelas</option>
-                                <option value="1">7</option>
-                                <option value="2">8</option>
-                                <option value="3">9</option>
+                                <option value="7">7</option>
+                                <option value="8">8</option>
+                                <option value="9">9</option>
                             </select>
                         </div>
                     </div>
@@ -80,16 +80,16 @@
                         <div class="row mb-3">
                             <label for="formFileSm" class="col-sm-2 form-label col-form-label-sm">Masukan Materi</label>
                             <div class="col-sm-10">
-                                <input class="form-control form-control-sm" id="formFileSm" type="file">
+                                <input name="link_materi" value="" class="form-control form-control-sm" id="formFileSm" type="file">
                             </div>
                         </div>
                     </fieldset>
-
-                </form>
-            </div>
-            <div class="modal-footer">
+                    <div class="modal-footer">
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
+                </form>
+            </div>
+
         </div>
     </div>
 </div>

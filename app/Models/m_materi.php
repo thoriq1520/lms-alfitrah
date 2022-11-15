@@ -13,7 +13,7 @@ class m_materi extends Model
     function post_materi($data)
     {
         $nama_mapel = $data['nama_mapel'];
-        $kelas = $data['harga_materi'];
+        $kelas = $data['kelas'];
         $judul_materi = $data['judul_materi'];
 
         $rand = rand();
@@ -22,7 +22,7 @@ class m_materi extends Model
 		$file_materi = $rand.'_'.$filename;
 
         $db = \Config\Database::connect();
-        $result = $db->query("insert into barang (nama_mapel, kelas, judul_materi, link_materi) values('$nama_mapel', '$kelas', '$judul_materi','$file_materi')");
+        $result = $db->query("insert into materi (id_materi,nama_mapel, kelas, judul_materi, link_materi) values('1','$nama_mapel', '$kelas', '$judul_materi','$file_materi')");
 
         return $result;
     }
