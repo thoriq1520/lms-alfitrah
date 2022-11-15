@@ -10,6 +10,17 @@ class m_materi extends Model
     protected $table = 'materi';
     protected $primaryKey = 'id_materi';
 
+    function get_materi()
+    {
+        $db = \Config\Database::connect();
+        $materi = $db->query("SELECT * FROM materi");
+
+        $data =  [
+            'materi' => $materi
+        ];
+        return $data['materi'];
+    }
+
     function post_materi($data)
     {
         $nama_mapel = $data['nama_mapel'];
