@@ -27,6 +27,12 @@ class c_main extends BaseController
         $data['mapel'] = $this->mapelModel->get_mapel();
         echo view('v_template', $data);
     }
+    public function mapel()
+    {
+        $data['content_view'] = "v_mapel";
+        $data['mapel'] = $this->mapelModel->get_mapel();
+        echo view('v_template', $data);
+    }
 }
 
 
