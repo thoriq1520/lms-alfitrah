@@ -10,10 +10,10 @@ class m_materi extends Model
     protected $table = 'materi';
     protected $primaryKey = 'id_materi';
 
-    function get_materi()
+    function get_materi($kelas,$mapel)
     {
         $db = \Config\Database::connect();
-        $materi = $db->query("SELECT * FROM materi");
+        $materi = $db->query("SELECT * FROM materi where kelas='$kelas' and nama_mapel = '$mapel'");
 
         $data =  [
             'materi' => $materi
@@ -33,7 +33,7 @@ class m_materi extends Model
 		$file_materi = $rand.'_'.$filename;
 
         $db = \Config\Database::connect();
-        $result = $db->query("insert into materi (id_materi,nama_mapel, kelas, judul_materi, link_materi) values('1','$nama_mapel', '$kelas', '$judul_materi','$file_materi')");
+        $result = $db->query("insert into materi (nama_mapel, kelas, judul_materi, link_materi) values('$nama_mapel', '$kelas', '$judul_materi','$file_materi')");
 
         return $result;
     }

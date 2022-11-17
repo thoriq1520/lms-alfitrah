@@ -46,8 +46,8 @@ $routes->post('post_materi', 'c_materi::post_materi');
 
 // main
 $routes->get('/home', 'c_main::display');
-$routes->get('kelas', 'c_main::kelas');
-$routes->get('mapel', 'c_main::mapel');
+$routes->get('kelas/(:num)', 'c_main::kelas/$1');
+$routes->get('materi/(:num)/(:any)', 'c_materi::materi/$1/$2');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

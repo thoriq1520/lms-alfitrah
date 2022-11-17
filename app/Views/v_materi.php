@@ -1,8 +1,8 @@
 <div class="container-xxl py-5 category">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-            <h6 class="section-title bg-white text-center text-primary px-3">Kelas 7</h6>
-            <h1 class="mb-5">Courses Mata Pelajaran</h1>
+                <h6 class="section-title bg-white text-center text-primary px-3">Kelas </h6>
+                <h1 class="mb-5">Materi</h1>
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMateri">
                 <i class="fa fa-plus"> Tambah Materi</i>
             </button>
@@ -20,7 +20,7 @@
                     ?>
                         <div class="col-lg-3 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="">
-                                <img class="img-fluid" src="img/cat-2.jpg" alt="">
+                                <img class="img-fluid" src="<?php echo base_url('img/cat-2.jpg') ?>" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0"><?php echo $m['nama_mapel'] ?></h5>
                                     <small class="text-primary"><?php echo $m['judul_materi'] ?></small>
@@ -50,7 +50,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="post_materi" enctype="multipart/form-data">
+                <form method="post" action="/post_materi" enctype="multipart/form-data">
                     <fieldset>
                         <div class="row mb-3">
                             <label for="disabledTextInput" class="col-sm-2 col-form-label col-form-label-sm">Mapel</label>
@@ -85,8 +85,8 @@
                         </div>
                     </fieldset>
                     <div class="modal-footer">
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </div>
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </form>
             </div>
 

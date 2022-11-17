@@ -24,18 +24,14 @@ class c_main extends BaseController
 
         echo view('v_login');
     }
-    public function kelas()
+    public function kelas($kelas)
     {
         $data['content_view'] = "v_kelas";
-        $data['mapel'] = $this->mapelModel->get_mapel();
+        $data['mapel'] = $this->mapelModel->get_mapel($kelas);
+        $data['kelas'] = $kelas;
         echo view('v_template', $data);
     }
-    public function mapel()
-    {
-        $data['content_view'] = "v_mapel";
-        $data['materi'] = $this->materiModel->get_materi();
-        echo view('v_template', $data);
-    }
+
 }
 
 

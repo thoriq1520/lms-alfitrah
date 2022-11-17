@@ -3,20 +3,27 @@
 namespace App\Controllers;
 
 use App\Models\m_materi;
+use App\Models\m_mapel;
 class c_materi extends BaseController
 {
     protected $materiModel;
+    protected $mapelModel;
     public function __construct()
     {
         $this->materiModel = new m_materi();
+        $this->mapelModel = new m_mapel();
+    }
+
+    public function materi($kelas, $mapel)
+    {
+        $data['content_view'] = "v_materi";
+        $data['materi'] = $this->materiModel->get_materi($kelas,$mapel);
+        $data['mapel'] = $this->mapelModel->get_mapel_1($kelas,$mapel);
+        echo view('v_template', $data);
     }
 
     public function post_materi()
     {
-        if (!session()->get('login')) {
-            return redirect()->route('');
-        }
-
         $data = [
             'nama_mapel' => $this->request->getVar('nama_mapel'),
             'kelas' => $this->request->getVar('kelas'),
@@ -28,7 +35,7 @@ class c_materi extends BaseController
 
         if ($result) {
             session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
-            return redirect()->route('mapel');
+            return redirect()->route('materi');
         }
     }
 }
