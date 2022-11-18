@@ -29,6 +29,10 @@ class m_materi extends Model
 
         $rand = rand();
         $filename = $_FILES['link_materi']['name'];
+
+        if(!is_dir($kelas.'/'.$nama_mapel)){
+            mkdir($kelas.'/'.$nama_mapel);
+        }
         move_uploaded_file($_FILES['link_materi']['tmp_name'], $kelas.'/'.$nama_mapel.'/'.$rand.'_'.$filename);
 		$file_materi = $rand.'_'.$filename;
 
