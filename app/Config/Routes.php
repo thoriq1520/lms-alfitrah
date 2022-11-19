@@ -46,6 +46,7 @@ $routes->get('/logout', 'c_auth::logout');
 $routes->get('/home', 'c_main::display');
 $routes->get('kelas', 'c_main::kelas');
 $routes->get('mapel', 'c_main::mapel');
+$routes->get('pdf', 'c_main::pdf');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

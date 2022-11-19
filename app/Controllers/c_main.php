@@ -33,6 +33,12 @@ class c_main extends BaseController
         $data['mapel'] = $this->mapelModel->get_mapel();
         echo view('v_template', $data);
     }
+    public function pdf()
+    {
+        $data['content_view'] = "v_bacaMateri";
+        // $data['mapel'] = $this->mapelModel->get_mapel();
+        echo view('v_template', $data);
+    }
 }
 
 
