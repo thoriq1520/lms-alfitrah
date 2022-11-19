@@ -40,6 +40,8 @@ $routes->get('/', 'c_auth::login');
 $routes->post('/login_proses', 'c_auth::login_proses');
 $routes->get('/logout', 'c_auth::logout');
 
+// materi
+$routes->post('post_materi', 'c_materi::post_materi');
 
 
 // main
