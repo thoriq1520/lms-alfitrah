@@ -1,7 +1,7 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
         <div class="d-flex justify-content-between"> 
-            <a href="" class="navbar-brand p-0">
+            <a href="/home" class="navbar-brand p-0">
                 <img src="<?php base_url() ?>/img/fitrah.png" width="20%" />
             </a>
             <button type="button" class="navbar-toggler me-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
@@ -12,7 +12,7 @@
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-2 p-lg-0">
-                <a href="" class="nav-item nav-link active">Home</a>
+                <a href="/home" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">List Mapel</a>
                 <a href="courses.html" class="nav-item nav-link">Website Al-Fitrah</a>
                 <a href="contact.html" class="nav-item nav-link">Siakad</a>

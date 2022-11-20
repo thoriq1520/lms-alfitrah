@@ -42,13 +42,14 @@ $routes->get('/logout', 'c_auth::logout');
 
 // materi
 $routes->post('post_materi', 'c_materi::post_materi');
+$routes->get('baca_materi/(:num)', 'c_materi::baca_materi/$1');
 
 
 // main
 $routes->get('/home', 'c_main::display');
-$routes->get('kelas', 'c_main::kelas');
-$routes->get('mapel', 'c_main::mapel');
-$routes->get('pdf', 'c_main::pdf');
+$routes->get('kelas/(:num)', 'c_main::kelas/$1');
+$routes->get('materi/(:num)/(:any)', 'c_materi::materi/$1/$2');
+$routes->get('semua_materi/(:any)', 'c_materi::semua_materi/$1');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

@@ -10,10 +10,10 @@ class m_mapel extends Model
     protected $table = 'mapel';
     protected $primaryKey = 'id';
 
-    function get_mapel($kelas)
+    function get_mapel()
     {
         $db = \Config\Database::connect();
-        $mapel = $db->query("SELECT * FROM mapel where kelas='$kelas'");
+        $mapel = $db->query("SELECT * FROM mapel");
 
         $data =  [
             'mapel' => $mapel

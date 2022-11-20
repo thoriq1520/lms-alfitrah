@@ -21,6 +21,25 @@ class m_materi extends Model
         return $data['materi'];
     }
 
+    function get_materi_1($id)
+    {
+        $db = \Config\Database::connect();
+        $materi = $db->query("SELECT * FROM materi where id_materi='$id'");
+
+        $data =  [
+            'materi' => $materi
+        ];
+        return $data['materi'];
+    }
+
+    function get_all_materi($mapel)
+    {
+        $materi = $this->where([
+            'nama_mapel' => $mapel,
+        ])->first();
+        return $materi;
+    }
+
     function post_materi($data)
     {
         $nama_mapel = $data['nama_mapel'];
@@ -29,6 +48,10 @@ class m_materi extends Model
 
         $rand = rand();
         $filename = $_FILES['link_materi']['name'];
+
+        if(!is_dir($kelas)){
+            mkdir($kelas);
+        }
 
         if(!is_dir($kelas.'/'.$nama_mapel)){
             mkdir($kelas.'/'.$nama_mapel);

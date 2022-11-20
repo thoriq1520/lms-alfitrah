@@ -23,6 +23,15 @@ class c_materi extends BaseController
         echo view('v_template', $data);
     }
 
+    public function semua_materi($mapel)
+    {
+        $data['content_view'] = "v_all_materi";
+        $data['materi'] = $this->materiModel->get_all_materi($mapel);
+        $data['mapel'] = $mapel;
+        dd($data['materi']);
+        echo view('v_template', $data);
+    }
+
     public function post_materi()
     {
         $data = [
@@ -37,6 +46,13 @@ class c_materi extends BaseController
             session()->setFlashdata('pesan', 'Data berhasil ditambahkan');
             return redirect()->route('home');
         }
+    }
+
+    public function baca_materi($id)
+    {
+        $data['content_view'] = "v_baca_materi";
+        $data['materi'] = $this->materiModel->get_materi_1($id);
+        echo view('v_template', $data);
     }
 }
 

@@ -16,6 +16,7 @@ class c_main extends BaseController
     public function display()
     {
         $data['content_view'] = "v_index";
+        $data['mapel'] = $this->mapelModel->get_mapel();
         echo view('v_template', $data);
     }
 
@@ -27,16 +28,11 @@ class c_main extends BaseController
     public function kelas($kelas)
     {
         $data['content_view'] = "v_kelas";
-        $data['mapel'] = $this->mapelModel->get_mapel($kelas);
+        $data['mapel'] = $this->mapelModel->get_mapel();
         $data['kelas'] = $kelas;
         echo view('v_template', $data);
     }
-    public function pdf()
-    {
-        $data['content_view'] = "v_bacaMateri";
-        // $data['mapel'] = $this->mapelModel->get_mapel();
-        echo view('v_template', $data);
-    }
+
 }
 
 
