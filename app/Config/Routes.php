@@ -50,6 +50,7 @@ $routes->get('/home', 'c_main::display');
 $routes->get('kelas/(:num)', 'c_main::kelas/$1');
 $routes->get('materi/(:num)/(:any)', 'c_materi::materi/$1/$2');
 $routes->get('semua_materi/(:any)', 'c_materi::semua_materi/$1');
+$routes->post('post_mapel', 'c_main::post_mapel');
 /*
  * --------------------------------------------------------------------
  * Additional Routing

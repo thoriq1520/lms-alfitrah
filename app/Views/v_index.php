@@ -176,23 +176,11 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form method="post" action="/post_materi" enctype="multipart/form-data">
-                    <fieldset>
-                        <div class="row mb-3">
-                            <div class="col-sm-10">
-                                <input type="hidden" name="nama_mapel"  value="" id="disabledTextInput" class="form-control form-control-sm">
-                            </div>
-                        </div>
-                    </fieldset>
+                <form method="post" action="/post_mapel" enctype="multipart/form-data">
                     <div class="row mb-3">
                         <label for="materi" class="col-sm-2 col-form-label col-form-label-sm">Mapel</label>
                         <div class="col-sm-10">
-                            <input type="text" id="materi" name="judul_materi" value="" class="form-control form-control-sm" placeholder="Nama Mapel">
-                        </div>
-                    </div>
-                    <div class="row mb-3">
-                        <div class="col-sm-10">
-                        <input type="hidden" name="kelas"  value="" id="disabledTextInput" class="form-control form-control-sm">
+                            <input type="text" id="mapel" name="nama" value="" class="form-control form-control-sm" placeholder="Nama Mapel">
                         </div>
                     </div>
                     <div class="modal-footer">
