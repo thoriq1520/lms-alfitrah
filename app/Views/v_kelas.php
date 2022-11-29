@@ -17,10 +17,10 @@
                     ?>
                         <div class="col-lg-3 col-md-12 wow zoomIn" data-wow-delay="0.3s">
                             <a class="position-relative d-block overflow-hidden" href="<?= base_url('materi/' . $kelas.'/'. $m['nama']); ?>">
-                                <img class="img-fluid" src="<?php echo base_url('img/cat-2.jpg') ?>" alt="">
+                                <img class="img-fluid" src="<?php echo base_url('img/'. $m['gambar']) ?>" alt="">
                                 <div class="bg-white text-center position-absolute bottom-0 end-0 py-2 px-3" style="margin: 1px;">
                                     <h5 class="m-0"><?php echo $m['nama'] ?></h5>
-                                    <small class="text-primary">Jumlah Materi</small>
+                                    <!-- <small class="text-primary">Jumlah Materi</small> -->
                                 </div>
                             </a>
                         </div>

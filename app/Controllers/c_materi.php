@@ -25,10 +25,13 @@ class c_materi extends BaseController
 
     public function semua_materi($mapel)
     {
+        $kelas ='semua kelas';
         $data['content_view'] = "v_all_materi";
         $data['materi'] = $this->materiModel->get_all_materi($mapel);
+        $data['kelas'] = $kelas;
         $data['mapel'] = $mapel;
-        dd($data['materi']);
+        // $data['materi'] = $this->materiModel->get_all_materi($mapel);
+        // $data['mapel'] = $mapel;
         echo view('v_template', $data);
     }
 

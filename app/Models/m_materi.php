@@ -34,10 +34,13 @@ class m_materi extends Model
 
     function get_all_materi($mapel)
     {
-        $materi = $this->where([
-            'nama_mapel' => $mapel,
-        ])->first();
-        return $materi;
+        $db = \Config\Database::connect();
+        $materi = $db->query("SELECT * FROM materi where nama_mapel='$mapel'");
+
+        $data =  [
+            'materi' => $materi
+        ];
+        return $data['materi'];
     }
 
     function post_materi($data)

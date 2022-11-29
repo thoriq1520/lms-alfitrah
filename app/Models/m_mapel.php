@@ -41,8 +41,23 @@ class m_mapel extends Model
         $urutan = (int) substr($id, 3, 4);
         $urutan++;
         $id = 'pel' . $urutan;
-        
-        $result = $db->query("insert into mapel values('$id','$nama')");
+
+        if($_FILES['gambar']['name'] != null){
+            $rand = rand();
+            $filename = $_FILES['gambar']['name'];
+            move_uploaded_file($_FILES['gambar']['tmp_name'], 'img/'.$rand.'_'.$filename);
+            $gambar = $rand.'_'.$filename;
+        }else{
+            $gambar = 'cat-2.jpg';
+        }
+        $data = array(
+            'id' => $id,
+            'nama' => $nama,
+            'gambar' => $gambar
+        );
+        $builder = $this->db->table($this->table);
+        $result = $builder->insert($data);
+       // $result = $db->query("insert into mapel (id,nama,gambar) values('$id','$nama','$gambar')");
         return $result;
 
     }
