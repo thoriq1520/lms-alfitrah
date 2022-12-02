@@ -23,10 +23,10 @@ class c_auth extends BaseController
         if ($result) {
             if($result['password'] != md5($password)){
                 session()->setFlashdata('password', 'Password salah');
-                return redirect()->route('');
+                return redirect()->route('login');
             }else{
                 session()->set('login', $result['role']);
-                return redirect()->route('home');
+                return redirect()->route('/');
             }
         }else{
             session()->setFlashdata('username', 'Username tidak ditemukan');

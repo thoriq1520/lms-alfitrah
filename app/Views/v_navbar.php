@@ -1,18 +1,18 @@
     <!-- Navbar Start -->
     <nav class="navbar navbar-expand-lg bg-white navbar-light shadow sticky-top p-0">
-        <div class="d-flex justify-content-between"> 
-            <a href="/home" class="navbar-brand p-0">
+        <div class="d-flex justify-content-between">
+            <a href="/" class="navbar-brand p-0">
                 <img src="<?php base_url() ?>/img/fitrah.png" width="20%" />
             </a>
             <button type="button" class="navbar-toggler me-2" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                    <span class="navbar-toggler-icon"></span>
+                <span class="navbar-toggler-icon"></span>
             </button>
         </div>
 
 
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav ms-auto p-2 p-lg-0">
-                <a href="/home" class="nav-item nav-link active">Home</a>
+                <a href="/" class="nav-item nav-link active">Home</a>
                 <a href="about.html" class="nav-item nav-link">List Mapel</a>
                 <a href="courses.html" class="nav-item nav-link">Website Al-Fitrah</a>
                 <a href="contact.html" class="nav-item nav-link">Siakad</a>
@@ -26,7 +26,17 @@
                 </div> -->
 
             </div>
-            <a href="logout" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Log Out<i class="fa fa-arrow-right ms-3"></i></a>
+            <?php
+            if (!session()->get('login')) {
+            ?>
+                <a href="/login" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Log In<i class="fa fa-arrow-right ms-3"></i></a>
+            <?php
+            } else {
+            ?>
+                <a href="/logout" class="btn btn-primary py-4 px-lg-5 d-none d-lg-block">Log Out<i class="fa fa-arrow-right ms-3"></i></a>
+            <?php
+            }
+            ?>
         </div>
     </nav>
     <!-- Navbar End -->

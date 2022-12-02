@@ -1,11 +1,17 @@
 <div class="container-xxl py-5 category">
     <div class="container">
         <div class="text-center wow fadeInUp" data-wow-delay="0.1s">
-                <h6 class="section-title bg-white text-center text-primary px-3">Kelas <?php echo $kelas?></h6>
-                <h1 class="mb-5"><?php echo $mapel?></h1>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMateri">
-                <i class="fa fa-plus"> Tambah Materi</i>
-            </button>
+            <h6 class="section-title bg-white text-center text-primary px-3">Kelas <?php echo $kelas ?></h6>
+            <h1 class="mb-5"><?php echo $mapel ?></h1>
+            <?php
+            if (session()->get('login')) {
+            ?>
+                <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#tambahMateri">
+                    <i class="fa fa-plus"> Tambah Materi</i>
+                </button>
+            <?php
+            }
+            ?>
         </div>
         <br />
 
@@ -54,7 +60,7 @@
                     <fieldset>
                         <div class="row mb-3">
                             <div class="col-sm-10">
-                                <input type="hidden" name="nama_mapel"  value="<?php echo $mapel?>" id="disabledTextInput" class="form-control form-control-sm">
+                                <input type="hidden" name="nama_mapel" value="<?php echo $mapel ?>" id="disabledTextInput" class="form-control form-control-sm">
                             </div>
                         </div>
                     </fieldset>
@@ -66,7 +72,7 @@
                     </div>
                     <div class="row mb-3">
                         <div class="col-sm-10">
-                        <input type="hidden" name="kelas"  value="<?php echo $kelas?>" id="disabledTextInput" class="form-control form-control-sm">
+                            <input type="hidden" name="kelas" value="<?php echo $kelas ?>" id="disabledTextInput" class="form-control form-control-sm">
                         </div>
                     </div>
                     <fieldset>

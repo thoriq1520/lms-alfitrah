@@ -30,8 +30,6 @@ class c_materi extends BaseController
         $data['materi'] = $this->materiModel->get_all_materi($mapel);
         $data['kelas'] = $kelas;
         $data['mapel'] = $mapel;
-        // $data['materi'] = $this->materiModel->get_all_materi($mapel);
-        // $data['mapel'] = $mapel;
         echo view('v_template', $data);
     }
 
@@ -56,6 +54,10 @@ class c_materi extends BaseController
         $data['content_view'] = "v_baca_materi";
         $data['materi'] = $this->materiModel->get_materi_1($id);
         echo view('v_template', $data);
+    }
+
+    public function delete($id){
+        
     }
 }
 
